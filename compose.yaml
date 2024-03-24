@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  rails:
+    image: "ruby:3.2"
+    command: "bin/rails s"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/paginate"
+      - "bundle:/usr/local/bundle"
+    working_dir: /paginate
+    environment:
+      BINDING: 0.0.0.0
+    tty: true
+    stdin_open: true
+
+volumes:
+  bundle:
