@@ -1,0 +1,13 @@
+<h1>Recordings</h1>
+
+<div id="recordings">
+  <%= render @recordings %>
+</div>
+
+<% unless @page.first? %>
+  <%= link_to "Previous page", recordings_path(page: @page.previous_param) %>
+<% end %>
+
+<% unless @page.last? %>
+  <%= link_to "Next page", recordings_path(page: @page.next_param) %>
+<% end %>
